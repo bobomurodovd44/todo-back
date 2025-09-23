@@ -6,7 +6,7 @@ import { Application } from './declarations'
 
 interface AuthenticationPayload {
   strategy: string
-  accessToken: string // frontenddan yuborilgan Firebase ID token
+  accessToken: string
 }
 
 export class FirebaseStrategy extends AuthenticationBaseStrategy {
@@ -40,7 +40,8 @@ export class FirebaseStrategy extends AuthenticationBaseStrategy {
       if (!user) {
         user = await users.create({
           email: decoded.email || '',
-          firebaseUid: decoded.uid
+          firebaseUid: decoded.uid,
+          fullName: decoded.name || decoded.displayName || ''
         })
       }
 
