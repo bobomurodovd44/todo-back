@@ -20,7 +20,7 @@ export class TodosService<ServiceParams extends Params = TodosParams> extends Mo
 
 export const getOptions = (app: Application): MongoDBAdapterOptions => {
   return {
-    paginate: app.get('paginate'),
+    paginate: false,
     Model: app.get('mongodbClient').then(db => db.collection('todos'))
   }
 }

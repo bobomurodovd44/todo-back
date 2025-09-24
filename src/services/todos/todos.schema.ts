@@ -15,8 +15,8 @@ export const todosSchema = Type.Object(
     createdBy: Type.Optional(ObjectIdSchema()),
     text: Type.String(),
     isCompleted: Type.Optional(Type.Boolean()),
-    updatedAt: Type.Number(),
-    createdAt: Type.Number()
+    updatedAt: Type.Optional(Type.Number()),
+    createdAt: Type.Optional(Type.Number())
   },
   { $id: 'Todos', additionalProperties: false }
 )

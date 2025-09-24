@@ -35,4 +35,8 @@ export const channels = (app: Application) => {
     // e.g. to publish all service events to all authenticated users use
     return app.channel('authenticated')
   })
+
+  app.service('todos').publish((data, context) => {
+    return app.channel('authenticated')
+  })
 }
