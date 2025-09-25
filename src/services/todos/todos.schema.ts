@@ -59,7 +59,8 @@ export const todosQueryProperties = Type.Pick(todosSchema, [
   'text',
   'createdAt',
   'updatedAt',
-  'createdBy'
+  'createdBy',
+  'isCompleted'
 ])
 export const todosQuerySchema = Type.Intersect(
   [
